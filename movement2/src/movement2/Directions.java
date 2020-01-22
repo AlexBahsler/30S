@@ -21,4 +21,6 @@ public class Directions
     public static final int DOWN  = 4;
             
     public static final int ROLL = 5;
+    
+    public static final int ATTACK = 6;
 }

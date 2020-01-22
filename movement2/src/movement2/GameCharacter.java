@@ -44,7 +44,7 @@ public class GameCharacter extends GameObject
         
         else if (key == KeyEvent.VK_RIGHT) direction = Directions.RIGHT;
         
-        
+        else if (key == KeyEvent.VK_UP)    direction = Directions.UP;
         
         else if (key == KeyEvent.VK_DOWN)  direction = Directions.DOWN;
         
@@ -52,12 +52,22 @@ public class GameCharacter extends GameObject
         
         if (key == KeyEvent.VK_X)  direction = Directions.ROLL;
         
-        
-        if (key == KeyEvent.VK_UP.KEY_PRESSED) direction = Directions.UP;
-        if (key == KeyEvent.KEY_RELEASED) direction = Directions.STOP;
-        
+        if (key == KeyEvent.VK_X) ;
     }
     
+    public void keyRelease (int key) {
+        if      (key == KeyEvent.VK_LEFT)  direction = Directions.STOP;
+        
+        else if (key == KeyEvent.VK_RIGHT) direction = Directions.STOP;
+        
+        else if (key == KeyEvent.VK_UP)    direction = Directions.STOP;
+        
+        else if (key == KeyEvent.VK_DOWN)  direction = Directions.STOP;
+        
+        else                               direction = Directions.STOP;
+        
+        if (key == KeyEvent.VK_X)  direction = Directions.STOP;
+    }
     
     
     /**
@@ -76,7 +86,7 @@ public class GameCharacter extends GameObject
         else if (direction == Directions.LEFT)  hitbox.x -= AMOUNT;
         else if (direction == Directions.RIGHT) hitbox.x += AMOUNT;
         
-        if      (direction == Directions.ROLL)  hitbox.x += 40;
+        if      (direction == Directions.ROLL)  hitbox.x += 100;
     }
 
     /**
